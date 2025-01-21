@@ -27,7 +27,7 @@ func nextDateHandler(w http.ResponseWriter, r *http.Request) {
 	repeatParam := r.URL.Query().Get("repeat")
 	dateParam := r.URL.Query().Get("date")
 
-	// Проверка и парсинг параметра now
+	// Проверка и парсинг значения now
 	now, err := time.Parse(DateFormat, nowParam)
 	if err != nil {
 		http.Error(w, "Invalid 'now' date format, must be YYYYMMDD", http.StatusBadRequest)
